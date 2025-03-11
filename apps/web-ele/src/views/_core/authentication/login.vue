@@ -1,30 +1,30 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { BasicOption } from '@vben/types';
+import type {VbenFormSchema} from '@vben/common-ui';
+import type {BasicOption} from '@vben/types';
 
-import { computed, markRaw } from 'vue';
+import {computed, markRaw} from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import {AuthenticationLogin, SliderCaptcha, z} from '@vben/common-ui';
+import {$t} from '@vben/locales';
 
-import { useAuthStore } from '#/store';
+import {useAuthStore} from '#/store';
 
-defineOptions({ name: 'Login' });
+defineOptions({name: 'Login'});
 
 const authStore = useAuthStore();
 
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
-    label: 'Super',
-    value: 'vben',
+    label: '超级管理员',
+    value: '超级管理员平安',
   },
   {
-    label: 'Admin',
-    value: 'admin',
+    label: '管理员',
+    value: '管理员平安',
   },
   {
-    label: 'User',
-    value: 'jack',
+    label: '用户',
+    value: '用户平安',
   },
 ];
 
@@ -40,9 +40,9 @@ const formSchema = computed((): VbenFormSchema[] => {
       label: $t('authentication.selectAccount'),
       rules: z
         .string()
-        .min(1, { message: $t('authentication.selectAccount') })
+        .min(1, {message: $t('authentication.selectAccount')})
         .optional()
-        .default('vben'),
+        .default('超级管理员平安'),
     },
     {
       component: 'VbenInput',
@@ -67,7 +67,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       },
       fieldName: 'username',
       label: $t('authentication.username'),
-      rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
+      rules: z.string().min(1, {message: $t('authentication.usernameTip')}),
     },
     {
       component: 'VbenInputPassword',
@@ -76,7 +76,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       },
       fieldName: 'password',
       label: $t('authentication.password'),
-      rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+      rules: z.string().min(1, {message: $t('authentication.passwordTip')}),
     },
     {
       component: markRaw(SliderCaptcha),

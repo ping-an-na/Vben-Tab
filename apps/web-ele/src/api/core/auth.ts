@@ -1,4 +1,4 @@
-import { baseRequestClient, requestClient } from '#/api/request';
+import {baseRequestClient, requestClient} from '#/api/request';
 
 export namespace AuthApi {
   /** 登录接口参数 */
@@ -22,7 +22,12 @@ export namespace AuthApi {
  * 登录
  */
 export async function loginApi(data: AuthApi.LoginParams) {
-  return requestClient.post<AuthApi.LoginResult>('/auth/login', data);
+  // return requestClient.post<AuthApi.LoginResult>('/auth/login', data);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ accessToken: 'aaaa' });
+    }, 1000);
+  });
 }
 
 /**
@@ -47,5 +52,10 @@ export async function logoutApi() {
  * 获取用户权限码
  */
 export async function getAccessCodesApi() {
-  return requestClient.get<string[]>('/auth/codes');
+  // return requestClient.get<string[]>('/auth/codes');
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ accessToken: 'aaaa' });
+    }, 1000);
+  });
 }

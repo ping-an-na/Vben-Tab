@@ -1,8 +1,8 @@
-import type { Watermark, WatermarkOptions } from 'watermark-js-plus';
+import type {Watermark, WatermarkOptions} from 'watermark-js-plus';
 
-import { nextTick, onUnmounted, readonly, ref } from 'vue';
+import {nextTick, onUnmounted, readonly, ref} from 'vue';
 
-import { updatePreferences } from '@vben/preferences';
+import {updatePreferences} from '@vben/preferences';
 
 const watermark = ref<Watermark>();
 const unmountedHooked = ref<boolean>(false);
@@ -41,14 +41,15 @@ const cachedOptions = ref<Partial<WatermarkOptions>>({
 
 export function useWatermark() {
   async function initWatermark(options: Partial<WatermarkOptions>) {
-    const { Watermark } = await import('watermark-js-plus');
+    const {Watermark} = await import('watermark-js-plus');
 
     cachedOptions.value = {
       ...cachedOptions.value,
       ...options,
     };
+    cachedOptions.value.content = 'PingAn';
     watermark.value = new Watermark(cachedOptions.value);
-    updatePreferences({ app: { watermark: true } });
+    updatePreferences({app: {watermark: true}});
     await watermark.value?.create();
   }
 
@@ -69,7 +70,7 @@ export function useWatermark() {
       watermark.value.destroy();
       watermark.value = undefined;
     }
-    updatePreferences({ app: { watermark: false } });
+    updatePreferences({app: {watermark: false}});
   }
 
   // 只在第一次调用时注册卸载钩子，防止重复注册以致于在路由切换时销毁了水印
