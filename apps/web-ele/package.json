@@ -49,8 +49,6 @@
 
   },
   "devDependencies": {
-    "unplugin-element-plus": "catalog:",
-    "xlsx": "^0.18.5",
-    "lodash": "^4.17.21"
+    "unplugin-element-plus": "catalog:"
   }
 }
