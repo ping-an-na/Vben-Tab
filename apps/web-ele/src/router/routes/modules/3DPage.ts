@@ -1,6 +1,6 @@
-import type { RouteRecordRaw } from 'vue-router';
+import type {RouteRecordRaw} from 'vue-router';
 
-import { BasicLayout, IFrameView } from '#/layouts';
+import {BasicLayout, IFrameView} from '#/layouts';
 // 项目
 const routes: RouteRecordRaw[] = [
   {
@@ -17,11 +17,10 @@ const routes: RouteRecordRaw[] = [
       {
         name: '3dm1',
         path: '/3DM/3dm1',
-        component: IFrameView,
+        component: () => import('#/views/_core/3dm/3dm1.vue'),
         meta: {
-          icon: 'skill-icons:postman',
-          component: () => import('#/views/_core/3dm/3dm1.vue'),
-          title: '一个小孩子',
+          icon: 'fluent:animal-cat-28-regular',
+          title: '一个小猫',
         },
       },
     ],

@@ -118,5 +118,11 @@
       "canvas",
       "node-gyp"
     ]
+  },
+  "dependencies": {
+    "@google/model-viewer": "3.2.1",
+    "@types/three": "^0.174.0",
+    "drei": "^2.2.21",
+    "three": "^0.174.0"
   }
 }
