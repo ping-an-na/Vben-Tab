@@ -45,8 +45,7 @@
     "element-plus": "catalog:",
     "pinia": "catalog:",
     "vue": "catalog:",
-    "vue-router": "catalog:",
-    "lodash": "^4.17.21"
+    "vue-router": "catalog:"
 
   },
   "devDependencies": {
