@@ -43,11 +43,10 @@
     "@vueuse/core": "catalog:",
     "dayjs": "catalog:",
     "element-plus": "catalog:",
-    "lodash": "^4.17.21",
     "pinia": "catalog:",
     "vue": "catalog:",
-    "vue-router": "catalog:",
-    "xlsx": "^0.18.5"
+    "vue-router": "catalog:"
+
   },
   "devDependencies": {
     "unplugin-element-plus": "catalog:"
